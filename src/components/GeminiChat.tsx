@@ -123,7 +123,7 @@ export function GeminiChat({ onSendMessage, isLoading }: GeminiChatProps) {
               margin: 0,
               letterSpacing: '-0.02em'
             }}>
-              Chat con Gemini
+              Chat with Gemini
             </h2>
             <p style={{
               fontSize: '13px',
@@ -159,7 +159,7 @@ export function GeminiChat({ onSendMessage, isLoading }: GeminiChatProps) {
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
-            🗑️ Limpiar
+            🗑️ Clear
           </button>
         )}
       </div>
@@ -300,7 +300,7 @@ export function GeminiChat({ onSendMessage, isLoading }: GeminiChatProps) {
           value={inputMessage}
           onChange={(e) => setInputMessage(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder="Escribe tu mensaje..."
+          placeholder="Write your message..."
           style={{
             flex: 1,
             padding: '16px 20px',
@@ -438,7 +438,7 @@ export function GeminiChat({ onSendMessage, isLoading }: GeminiChatProps) {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              🚀 Ideas de contenido
+              🚀 Content Ideas
             </button>
             <button
               onClick={() => setInputMessage('Analyze current trends in my niche')}
