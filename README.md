@@ -40,6 +40,12 @@
 - **Modern Interface**: Beautiful dark mode UI with glass morphism design
 - **Professional Grade**: Built with enterprise-level security and performance standards
 
+### 👨‍💻 About the Creator
+
+**xPersonalAsistant** is developed by [Paco Muro](https://www.pacomuro.site/), a Solutions Builder and Tech Developer with a PhD in AI and expertise in Telecommunications Engineering. 
+
+🔗 **Learn more about Paco**: Visit [pacomuro.site](https://www.pacomuro.site/) to explore his portfolio, technical projects, and professional background in AI development and software engineering.
+
 ## ✨ Key Features
 
 ### 🔍 **Comprehensive Twitter Analysis**
@@ -144,7 +150,7 @@
 
 ### **1. Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/xPersonalAsistant.git
+git clone https://github.com/PacooMC/xPersonalAsistant.git
 cd xPersonalAsistant
 ```
 
@@ -168,14 +174,12 @@ Edit `.env.local` with your API credentials:
 ```env
 # Twitter API Configuration (RapidAPI)
 TWITTER_RAPIDAPI_KEY=your_rapidapi_key_here
-TWITTER_RAPIDAPI_HOST=twitter-v24.p.rapidapi.com
 
 # Google Gemini AI Configuration
 GEMINI_API_KEY=your_gemini_api_key_here
 
 # Application Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_APP_NAME=xPersonalAsistant
 NEXT_PUBLIC_DEFAULT_USERNAME=your_twitter_username
 
 # Security Configuration
@@ -222,20 +226,16 @@ http://localhost:3000
 
 | Variable | Description | Default | Production |
 |----------|-------------|---------|------------|
-| `NEXT_PUBLIC_APP_URL` | Application domain | `http://localhost:3000` | `https://yourdomain.com` |
+| `NEXT_PUBLIC_APP_URL` | Application domain | `http://localhost:3000` | `https://pacomuro.site` |
 | `NEXT_PUBLIC_DEFAULT_USERNAME` | Default Twitter username | `username` | Your handle |
-| `RATE_LIMIT_MAX` | API rate limit per window | `100` | Adjust based on needs |
-| `RATE_LIMIT_WINDOW` | Rate limit time window (ms) | `900000` | 15 minutes default |
-| `LOG_LEVEL` | Application logging level | `info` | `warn` for production |
+| `RATE_LIMIT_MAX` | API rate limit per window | `10` | Adjust based on needs |
+| `RATE_LIMIT_WINDOW` | Rate limit time window (ms) | `300000` | 5 minutes default |
 
-### **Security & Performance**
+### **Environment Mode**
 
 | Variable | Description | Development | Production |
 |----------|-------------|-------------|------------|
 | `NODE_ENV` | Environment mode | `development` | `production` |
-| `NEXT_TELEMETRY_DISABLED` | Disable Next.js telemetry | `0` | `1` |
-| `FORCE_HTTPS` | Enforce HTTPS connections | `false` | `true` |
-| `PERFORMANCE_MONITORING` | Enable performance tracking | `false` | `true` |
 
 ## 🔑 API Configuration
 
@@ -274,12 +274,17 @@ http://localhost:3000
 
 Test your API connections:
 ```bash
-# Run the built-in API test
-npm run test:apis
-
-# Or manually test endpoints
+# Test API endpoints manually
 curl -X GET "http://localhost:3000/api/config" \
   -H "Content-Type: application/json"
+
+# Test Twitter API endpoint
+curl -X GET "http://localhost:3000/api/twitter/test"
+
+# Test Gemini API endpoint  
+curl -X POST "http://localhost:3000/api/gemini" \
+  -H "Content-Type: application/json" \
+  -d '{"action": "test"}'
 ```
 
 ## 🚀 Production Deployment
@@ -301,9 +306,6 @@ npm run build:secure
 
 # Start production server
 npm start
-
-# Or deploy to platform of choice
-npm run deploy
 ```
 
 ### **Deployment Platforms**
@@ -335,18 +337,16 @@ docker run -p 3000:3000 --env-file .env.production xpersonal-assistant
 ```env
 # Production Configuration
 NODE_ENV=production
-NEXT_PUBLIC_APP_URL=https://yourdomain.com
+NEXT_PUBLIC_APP_URL=https://pacomuro.site
 CONFIG_SECRET=your_generated_secure_secret_here
 
 # API Credentials (same as development)
 TWITTER_RAPIDAPI_KEY=your_production_key
 GEMINI_API_KEY=your_production_key
 
-# Security & Performance
-FORCE_HTTPS=true
-NEXT_TELEMETRY_DISABLED=1
-PERFORMANCE_MONITORING=true
-LOG_LEVEL=warn
+# Optional Rate Limiting
+RATE_LIMIT_MAX=100
+RATE_LIMIT_WINDOW=300000
 ```
 
 ## 📚 Usage Guide
@@ -475,9 +475,8 @@ npm run dev -- --debug
 
 ### **Getting Help**
 - 📖 Check this documentation first
-- 🐛 Search existing [GitHub Issues](https://github.com/yourusername/xPersonalAsistant/issues)
-- 💬 Join our [Discord Community](https://discord.gg/yourserver)
-- 📧 Contact support: support@yourdomain.com
+- 🐛 Search existing [GitHub Issues](https://github.com/PacooMC/xPersonalAsistant/issues)
+- 📧 Contact: paco@pacomuro.site
 
 ## 🤝 Contributing
 
@@ -487,7 +486,7 @@ We welcome contributions from the community! Here's how you can help improve xPe
 
 1. **Fork the Repository**
    ```bash
-   git clone https://github.com/yourusername/xPersonalAsistant.git
+   git clone https://github.com/PacooMC/xPersonalAsistant.git
    cd xPersonalAsistant
    ```
 
@@ -534,16 +533,15 @@ We welcome contributions from the community! Here's how you can help improve xPe
 # Development
 npm run dev              # Start development server
 npm run build           # Build for production
-npm run start           # Start production server
+npm start               # Start production server
 
 # Quality Assurance
 npm run lint            # Run ESLint
 npm run type-check      # TypeScript type checking
-npm run security-check  # Security audit
+npm run security-check  # Security audit (npm audit)
 npm run build:secure    # Full security-enhanced build
 
-# Testing & Analysis
-npm run test            # Run test suite
+# Analysis
 npm run build:analyze   # Bundle analysis
 ```
 
@@ -582,28 +580,20 @@ limitations under the License.
 
 ## 💬 Support
 
-### **Community & Support Channels**
+Need help? Feel free to reach out:
 
-- 📖 **Documentation**: [Complete Guide](https://docs.yourdomain.com)
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/yourusername/xPersonalAsistant/issues)
-- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/yourusername/xPersonalAsistant/discussions)
-- 💬 **Community Chat**: [Discord Server](https://discord.gg/yourserver)
-- 📧 **Direct Support**: support@yourdomain.com
-
-### **Professional Support**
-
-For enterprise implementations, custom integrations, or priority support:
-- 🏢 **Enterprise Consulting**: enterprise@yourdomain.com
-- 🔧 **Custom Development**: development@yourdomain.com
-- 📊 **Analytics & Reporting**: analytics@yourdomain.com
+- 📖 **Documentation**: This README file
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/PacooMC/xPersonalAsistant/issues)
+- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/PacooMC/xPersonalAsistant/discussions)
+- 📧 **Direct Contact**: paco@pacomuro.site
 
 ---
 
 <div align="center">
 
-**Built with ❤️ by the xPersonalAsistant Team**
+**Built with ❤️ by [Paco Muro](https://www.pacomuro.site/)**
 
-[Website](https://yourdomain.com) • [Documentation](https://docs.yourdomain.com) • [Community](https://discord.gg/yourserver) • [Twitter](https://twitter.com/yourhandle)
+[Portfolio](https://www.pacomuro.site/) • [GitHub](https://github.com/PacooMC) • [Twitter](https://twitter.com/PacoMuro_)
 
 ⭐ **If this project helps you, please consider giving it a star!** ⭐
 
