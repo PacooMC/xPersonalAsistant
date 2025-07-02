@@ -71,17 +71,17 @@
 
 ## 📸 Screenshots
 
-### Main Application Interface
-![Application Overview](docs/screenshots/app-overview.png)
-*Complete dashboard showing Twitter profile integration, real-time tweets feed, and AI chat interface with modern dark mode design*
+### Application Overview - Main Interface
+![App Overview 1](docs/screenshots/app-overview-1.png)
+*Clean application interface showing the main dashboard with Twitter integration and AI chat sidebar*
 
-### AI Writing Style Analysis
-![AI Analysis Results](docs/screenshots/style-analysis-results.png)
-*Comprehensive AI-powered writing style analysis featuring detailed scoring, sentiment analysis, and personalized improvement recommendations*
+### Application Overview - Full Interface  
+![App Overview 2](docs/screenshots/app-overview-2.png)
+*Complete application view displaying all main features and navigation elements*
 
-### Interactive AI Chat Assistant
-![Chat Interface](docs/screenshots/chat-interaction.png)
-*Real-time conversation with Gemini AI providing context-aware advice and strategic Twitter engagement recommendations*
+### Tweets Analysis & AI Chat
+![Tweets and Chat](docs/screenshots/tweets-and-chat.png)
+*Real-time Twitter feed with collected tweets, timestamps, and active AI chat conversation*
 
 ## 🔄 How It Works
 
